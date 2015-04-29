@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Serialization;
 
 namespace TeamCitySharp.DomainEntities
 {
@@ -10,6 +11,7 @@ namespace TeamCitySharp.DomainEntities
         public string BuildTypeId { get; set; }
         public string Href { get; set; }
         public string WebUrl { get; set; }
+        [XmlElement(ElementName = "statusText")]
         public string StatusText { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime FinishDate { get; set; }

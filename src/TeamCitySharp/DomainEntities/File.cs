@@ -1,7 +1,12 @@
-﻿namespace TeamCitySharp.DomainEntities
+﻿using System.Xml.Serialization;
+
+namespace TeamCitySharp.DomainEntities
 {
     public class File
     {
-        public string relativefile { get; set; }
+        [XmlElement(ElementName = "file")]
+        public string FilePath { get; set; }
+        [XmlElement(ElementName = "relative-file")]
+        public string RelativeFile { get; set; }
     }
 }
