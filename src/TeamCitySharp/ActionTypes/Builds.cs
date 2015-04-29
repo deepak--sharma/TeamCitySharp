@@ -145,5 +145,18 @@ namespace TeamCitySharp.ActionTypes
 
             return builds.Where(b => b.Status != "SUCCESS").ToList();
         }
+
+        public Build ByBuildId(long id)
+        {
+            var build = _caller.GetFormat<Build>("/app/rest/builds/id:{0}", id);
+
+            return build;
+        }
+        public Build ByBuildNumber(string number)
+        {
+            var build = _caller.GetFormat<Build>("/app/rest/builds/number:{0}", number);
+
+            return build;
+        }
     }
 }
